@@ -24,14 +24,14 @@ const EmployeeList = () => {
   }, []);
 
   const deleteEmployee = (e, id) => {
-      e.preventDefault();
-      EmployeeService.deleteEmployee(id).then((res) => {
-          if(employees) {
-              setEmployees((prevElement) => {
-                  return prevElement.filter((employee) => employee.id !== id);
-              })
-          }
-      });
+    e.preventDefault();
+    EmployeeService.deleteEmployee(id).then((res) => {
+      if (employees) {
+        setEmployees((prevElement) => {
+          return prevElement.filter((employee) => employee.id !== id);
+        })
+      }
+    });
   }
 
   return (
@@ -56,20 +56,23 @@ const EmployeeList = () => {
               <th className="text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6">
                 Email ID
               </th>
+              <th className="text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6">
+                Contact
+              </th>
               <th className="text-right font-medium text-gray-500 uppercase tracking-wider py-3 px-6">
                 Actions
               </th>
             </tr>
           </thead>
           {!loading && (
-              <tbody className="bg-white">
-                  {employees.map((employee) => (
-                      <Employee 
-                      employee={employee}
-                      deleteEmployee={deleteEmployee} 
-                      key={employee.id}></Employee>
-                  ))}
-              </tbody>
+            <tbody className="bg-white">
+              {employees.map((employee) => (
+                <Employee
+                  employee={employee}
+                  deleteEmployee={deleteEmployee}
+                  key={employee.id}></Employee>
+              ))}
+            </tbody>
           )}
         </table>
       </div>
