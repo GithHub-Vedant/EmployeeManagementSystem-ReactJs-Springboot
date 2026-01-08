@@ -18,17 +18,21 @@ public class EmployeeEntity {
     
     @Column(name = "email_id")
     private String emailId;
+    
+    @Column(name = "contact")
+    private String contact;
 
     // Default constructor
     public EmployeeEntity() {
     }
 
     // Constructor with parameters
-    public EmployeeEntity(Long id, String firstName, String lastName, String emailId) {
+    public EmployeeEntity(Long id, String firstName, String lastName, String emailId, String contact) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailId = emailId;
+        this.contact = contact;
     }
 
     // Getters and Setters
@@ -62,5 +66,13 @@ public class EmployeeEntity {
 
     public void setEmailId(String emailId) {
         this.emailId = emailId;
+    }
+    
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 }
