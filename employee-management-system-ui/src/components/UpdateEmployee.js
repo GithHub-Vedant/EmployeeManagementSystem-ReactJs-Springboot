@@ -10,6 +10,7 @@ const UpdateEmployee = () => {
     firstName: "",
     lastName: "",
     emailId: "",
+    contact: "",
   });
 
   const handleChange = (e) => {
@@ -77,6 +78,17 @@ const UpdateEmployee = () => {
             type="email"
             name="emailId"
             value={employee.emailId}
+            onChange={(e) => handleChange(e)}
+            className="h-10 w-96 border mt-2 px-2 py-2"></input>
+        </div>
+        <div className="items-center justify-center h-14 w-full my-4">
+          <label className="block text-gray-600 text-sm font-normal">
+            Contact
+          </label>
+          <input
+            type="text"
+            name="contact"
+            value={employee.contact}
             onChange={(e) => handleChange(e)}
             className="h-10 w-96 border mt-2 px-2 py-2"></input>
         </div>
