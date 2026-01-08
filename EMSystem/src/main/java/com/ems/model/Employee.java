@@ -5,17 +5,19 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String emailId;
+    private String contact;
 
     // Default constructor
     public Employee() {
     }
 
     // Constructor with parameters
-    public Employee(Long id, String firstName, String lastName, String emailId) {
+    public Employee(Long id, String firstName, String lastName, String emailId, String contact) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailId = emailId;
+        this.contact = contact;
     }
 
     // Getters and Setters
@@ -49,5 +51,13 @@ public class Employee {
 
     public void setEmailId(String emailId) {
         this.emailId = emailId;
+    }
+    
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 }
