@@ -22,6 +22,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeEntity.setFirstName(employee.getFirstName());
         employeeEntity.setLastName(employee.getLastName());
         employeeEntity.setEmailId(employee.getEmailId());
+        employeeEntity.setContact(employee.getContact());
         
         EmployeeEntity savedEntity = employeeRepository.save(employeeEntity);
         
@@ -30,6 +31,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         result.setFirstName(savedEntity.getFirstName());
         result.setLastName(savedEntity.getLastName());
         result.setEmailId(savedEntity.getEmailId());
+        result.setContact(savedEntity.getContact());
         
         return result;
     }
@@ -43,6 +45,7 @@ public class EmployeeServiceImpl implements EmployeeService {
             employee.setFirstName(entity.getFirstName());
             employee.setLastName(entity.getLastName());
             employee.setEmailId(entity.getEmailId());
+            employee.setContact(entity.getContact());
             return employee;
         }).collect(Collectors.toList());
     }
@@ -56,6 +59,7 @@ public class EmployeeServiceImpl implements EmployeeService {
             employee.setFirstName(employeeEntity.getFirstName());
             employee.setLastName(employeeEntity.getLastName());
             employee.setEmailId(employeeEntity.getEmailId());
+            employee.setContact(employeeEntity.getContact());
             return employee;
         }
         return null;
@@ -68,6 +72,7 @@ public class EmployeeServiceImpl implements EmployeeService {
             employeeEntity.setFirstName(employee.getFirstName());
             employeeEntity.setLastName(employee.getLastName());
             employeeEntity.setEmailId(employee.getEmailId());
+            employeeEntity.setContact(employee.getContact());
             
             EmployeeEntity updatedEntity = employeeRepository.save(employeeEntity);
             
@@ -76,6 +81,7 @@ public class EmployeeServiceImpl implements EmployeeService {
             result.setFirstName(updatedEntity.getFirstName());
             result.setLastName(updatedEntity.getLastName());
             result.setEmailId(updatedEntity.getEmailId());
+            result.setContact(updatedEntity.getContact());
             
             return result;
         }
